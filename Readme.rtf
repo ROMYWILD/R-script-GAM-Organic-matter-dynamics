@@ -1,0 +1,37 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf830
+{\fonttbl\f0\fswiss\fcharset0 ArialMT;\f1\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red38\green38\blue38;\red242\green242\blue242;\red38\green38\blue38;
+}
+{\*\expandedcolortbl;;\cssrgb\c20000\c20000\c20000;\cssrgb\c96078\c96078\c96078;\csgenericrgb\c14902\c14902\c14902;
+}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sl360\slmult1\partightenfactor0
+
+\f0\fs24 \cf2 \cb3 \expnd0\expndtw0\kerning0
+The R code is supplementary to the publication \'84\cf0 \cb1 \kerning1\expnd0\expndtw0 Agricultural land use alters temporal dynamics and the composition of organic matter in temperate headwater streams\'93 and was used to calculate generalized additive models (GAM) in the analysis of stream organic matter standing crops and to test whether temporal patterns in response variables were significantly different between landuse types. \
+\pard\pardeftab720\partightenfactor0
+\cf0 \
+\
+\pard\pardeftab720\ri-386\sl360\slmult1\partightenfactor0
+\cf0 In this publication the GAMs were chosen for their flexibility to model variation in the data structure that follows a complex non-linear relationship with the response variable such as the case for temporal replicates in each of the studied streams, and thus also land use categories (Wood 2006, Zuur et al. 2009). In order to test for significant differences between land use types in the response variables, we linked the response variables to the categorical fixed factor stream that was nested within the factor land use. To account for temporal dependency between the monthly measurements of POM (particulate organic matter) inputs, BOM (benthic organic matter), organic carbon spiraling metrics, environmental variables and litter decomposition rates, smooth terms, modeling the temporal pattern of these response variables, were added to the model. These were calculated as interaction terms between land use type and sampling date using the \'93by\'94 command based on the default method \'93tp\'94 (thin plate regression splines). GAMs are also the only statistical procedure that allowed us to test the hypothesis that temporal dynamics of POM inputs, BOM and carbon spiraling metrics differed between land use types using the mentioned interaction term between land use type and sampling date. For this purpose, the factor land use type was ordered with the level \'93agriculture\'94 being assigned a treatment coding and the level \'93reference\'94 a reference coding using the functions \'93as.ordered\'94 and \'93contr.treatment\'94 in the package \'93stats\'94. A significant interaction between sampling date and land use type indicated a significant difference between the temporal dynamics of reference and agricultural streams. Temporal autocorrelation between replicates of BOM, POM inputs, environmental variables, spiraling metrics and litter decomposition rates was considered by adding a correlation structure (\'93Ar.start\'94) to the model based on assigning each individual time series a start value using the \'93start_event\'94 function and incorporating a rho value that was calculated from the respective model without correlation structure in the package \'93itsadug\'94\cf4  \cf0 (van Rij et al. 2016). Models were calculated based on gamma distributions using a log-link function. The function \'93gam.check\'94 was employed to visually evaluate the normalized residuals of the fitted models, regarding normality of errors and constant variance. \
+\pard\pardeftab720\fi720\ri-386\sl360\slmult1\partightenfactor0
+\cf0 As there is no statistical approach available to calculate pairwise comparisons from a GAM model, we applied generalized linear mixed models (GLMM) (Bates et al. 2015) to test for significant differences between the four individual streams using the \'93glmer\'94 function from the package \'93lme4\'94. The model contained the fixed factor stream and a random slope and intercept term allowing the coefficients of the temporal variable sampling time to vary by stream, hence adjusting for temporal replication in the model. Subsequently, pairwise comparisons were carried out using the function \'93lsmeans\'94 in the package \'93lsmeans\'94. \
+\
+\
+\pard\pardeftab720\li480\fi-480\ri-386\sl480\slmult1\sb100\partightenfactor0
+\cf0 Bates, D., M. M\'e4chler, B. Bolker, and S. Walker. 2014. Fitting Linear Mixed-Effects Models using lme4.\
+Van Rij J, M. Wieling, R. Baayen and H. van Rijn. 2016. \'93itsadug: Interpreting Time Series and Autocorrelated Data Using GAMMs.\'94 R package version 2.2.\
+Wood, S. 2006. Generalized additive models: an introduction with R. Boca Raton, Florida: Chapman& Hall/CRC.\
+Wood, S. N. 2011. Fast stable restricted maximum likelihood and marginal likelihood estimation of semiparametric generalized linear models. Journal of the Royal Statistical Society: Series B (Statistical Methodology) 73:3-36.\
+\pard\pardeftab720\fi720\ri-386\sl360\slmult1\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sl360\slmult1\partightenfactor0
+\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\
+\
+\
+https://zenodo.org/badge/147512320.svg}
